@@ -1,10 +1,12 @@
 # -*- coding:utf-8 -*-
 
+from utils import template
+
 class build(template.exe):
 	def __init__(self):
 		super(build, self).__init__('fire')
 
-		self.add_source_dir('.', exclude_dir = 'platform')
+		self.add_source_dir('.', excludes = ('platform',))
 		self.add_include_dir('.')
 
 		self.add_macros('TEST')
