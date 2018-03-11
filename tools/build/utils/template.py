@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 
 import path
+import config
 import inspect
 
 import os.path
@@ -10,13 +11,25 @@ class project(object):
 	def __init__(self, name = None):
 		self.name = name or self.gen_name()
 
-		self.sources = {}
-		self.includes = {}
-		self.macros = []
-		self.depends = set()
-
 		self.source_root = None
 		self.include_root = None
+
+		self.configs = {} # {name : configs}
+		self.prepare_config('normal')
+
+	def build_config(self, name):
+		configer = getattr(self, 'setup_%s'%(name), None)
+		if not configer:
+			return
+
+		self.prepare_config(name)
+		configer()
+
+	def prepare_config(self, name):
+		conf = config.config(self)
+		self.current_config = conf
+
+		self.configs[name] = conf
 
 	def set_roots(self, source_root = None, include_root = None):
 		self.source_root = self.root.join(source_root)
@@ -28,12 +41,12 @@ class project(object):
 	def add_source_dir(self, dir, excludes = ()):
 		dir = self.root.join(dir)
 		files = self.scan_dir(dir, ('.cpp', '.cxx', '.c'), excludes)
-		self.sources.update(files)
+		self.current_config.sources.update(files)
 
 	def add_include_dir(self, dir, excludes =()):
 		dir = self.root.join(dir)
 		files = self.scan_dir(dir, ('.h', '.hpp'), excludes)
-		self.includes.update(files)
+		self.current_config.includes.update(files)
 
 	def scan_dir(self, name, suffix, excludes):
 		root = path.path(name)
@@ -56,15 +69,29 @@ class project(object):
 		pass
 
 	def add_depends(self, *depends):
-		self.depends.update(depends)
+		self.current_config.depends.update(depends)
 
-	def gen_cmake_file(self):
-		pass
+	def gen_args(self):
+		args = {}
+		args['name'] = self.name
+
+		return 'invalid.txt', args
 
 class lib(project):
 	def __init__(self, name = None):
 		super(lib, self).__init__(name)
 
+	def gen_args(self):
+		_, args = super(lib, self).gen_args()
+
+		return 'lib.txt', args
+
 class exe(project):
 	def __init__(self, name = None):
 		super(exe, self).__init__(name)
+
+	def gen_args(self):
+		_, args = super(exe, self).gen_args()
+		# add exe args
+
+		return 'exe.txt', args

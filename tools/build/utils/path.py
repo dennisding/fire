@@ -38,8 +38,6 @@ class path(object):
 	def iter_file(self, filter = None):
 		filter = filter or (lambda a: True)
 
-		print 'iter files', self.root
-
 		for root, dirs, files in os.walk(self.root):
 			if '.svn' in dirs:
 				dirs.remove('.svn')

@@ -11,8 +11,6 @@ class build(template.exe):
 
 		self.add_macros('TEST')
 
-		self.add_depends()
-
 	def setup_ios(self):
 		self.add_source_dir('platform/ios')
 
