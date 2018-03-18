@@ -1,0 +1,10 @@
+
+# source files
+set(sources $source_files)
+
+# include files
+set(includes $include_files)
+
+# source group
+
+$generator($project_name ${sources} ${includes})

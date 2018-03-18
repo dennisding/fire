@@ -4,6 +4,7 @@ import os
 import path
 import template
 import file_utils
+import cmake_builder
 
 class builder(object):
 	def __init__(self, args):
@@ -18,7 +19,8 @@ class builder(object):
 	def build(self):
 		self.scan_builders()
 		self.prepare_builders()
-		self.gen_cmake_files()
+		#self.gen_cmake_files()
+		self.gen_targets()
 
 		print 'builders', self.builders
 		print 'files', self.builders['fire'].configs
@@ -54,18 +56,26 @@ class builder(object):
 	def prepare_builders(self):
 		pass
 
-	def gen_cmake_files(self):
-		for name, builder in self.builders.iteritems():
-			self.gne_builder(name, builder)
+	def gen_targets(self):
+		#self.builder.gen_targets()
+		builder = cmake_builder.cmake_builder(self)
+		builder.gen_target()
 
-		self.gen_solution()
+	def iter_project(self):
+		return self.builders.itervalues()
 
-	def gen_builder(self, name, builder):
-		args = {}
+#	def gen_cmake_files(self):
+#		for name, builder in self.builders.iteritems():
+#			self.gen_builder_cmake_file(name, builder)
+#
+#		self.gen_solution()
 
-	def gen_solution(self):
-		args = {}
-		args['sln_name'] = self.args.sln_name
-
-		target = self.target.join('CMakeLists.txt')
-		file_utils.gen_file('cmake_sln.txt', target, args)
+#	def gen_builder_cmake_file(self, name, builder):
+#		args = {}
+#
+#	def gen_solution(self):
+#		args = {}
+#		args['sln_name'] = self.args.sln_name
+#
+#		target = self.target.join('CMakeLists.txt')
+#		file_utils.gen_file('cmake_sln.txt', target, args)

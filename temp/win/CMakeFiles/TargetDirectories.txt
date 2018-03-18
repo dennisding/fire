@@ -1,0 +1,5 @@
+W:/fire/temp/win/CMakeFiles/fire.dir
+W:/fire/temp/win/CMakeFiles/client.dir
+W:/fire/temp/win/CMakeFiles/artoolkit.dir
+W:/fire/temp/win/CMakeFiles/ALL_BUILD.dir
+W:/fire/temp/win/CMakeFiles/ZERO_CHECK.dir

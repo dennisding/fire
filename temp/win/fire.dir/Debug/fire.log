@@ -1,0 +1,4 @@
+﻿  Building Custom Rule W:/fire/temp/cmake/CMakeLists.txt
+  CMake does not need to re-run because W:/fire/temp/win/CMakeFiles/generate.stamp is up-to-date.
+  main.cpp
+  fire.vcxproj -> W:\fire\temp\win\Debug\fire.lib

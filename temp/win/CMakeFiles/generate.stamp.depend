@@ -1,0 +1,26 @@
+# CMake generation dependency list for this directory.
+W:/fire/temp/cmake/CMakeLists.txt
+W:/fire/temp/win/CMakeFiles/3.8.2/CMakeSystem.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/CMakeSystemSpecificInitialize.cmake
+W:/fire/temp/win/CMakeFiles/3.8.2/CMakeCCompiler.cmake
+W:/fire/temp/win/CMakeFiles/3.8.2/CMakeCXXCompiler.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/CMakeGenericSystem.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/Platform/Windows.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/Platform/WindowsPaths.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/CMakeCInformation.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/CMakeLanguageInformation.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/Platform/Windows-MSVC.cmake
+W:/fire/temp/win/CMakeFiles/3.8.2/CMakeRCCompiler.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/CMakeRCInformation.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/CMakeCXXInformation.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/CMakeLanguageInformation.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.8/Modules/CMakeCommonLanguageInclude.cmake
+W:/fire/temp/cmake/fire.cmake
+W:/fire/temp/cmake/client.cmake
+W:/fire/temp/cmake/artoolkit.cmake

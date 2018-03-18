@@ -23,6 +23,9 @@ class path(object):
 		tokens.reverse()
 		return tokens
 
+	def split(self):
+		return self.split_path(self.root)
+
 	def __hash__(self):
 		return hash(self.root)
 
@@ -34,6 +37,22 @@ class path(object):
 
 	def join(self, name):
 		return os.path.join(self.root, name)
+
+	def relative_to(self, root):
+		if isinstance(root, str):
+			root = path(root)
+
+		common = 0
+		for first, second in zip(self.tokens, root.tokens):
+			if first != second:
+				break
+			common += 1
+
+		tokens = self.tokens[common:]
+		for i in xrange(len(root.tokens) - common):
+			tokens.insert(0, '..')
+
+		return '/'.join(tokens)
 
 	def iter_file(self, filter = None):
 		filter = filter or (lambda a: True)
